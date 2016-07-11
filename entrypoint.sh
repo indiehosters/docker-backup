@@ -4,7 +4,7 @@ while true
 do
   cd /domains
   START=`date +%s`
-  for domain in `ls .`
+  for domain in `ls . -I backups -I trash`
   do
     echo $domain
     cd /domains/$domain
