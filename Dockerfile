@@ -15,12 +15,14 @@ RUN apt-get update \
     python \
     python-dev \
     python-pip \
+    libffi-dev \
     librsync-dev \
+    libssl-dev \
     ncftp \
     lftp \
     rsync \
  && rm -rf /var/lib/apt/lists/* \
- && pip install --upgrade lockfile paramiko pycrypto \
+ && pip install --upgrade cffi lockfile paramiko pycrypto \
  && cd /tmp/ \
  && wget https://launchpad.net/duplicity/0.7-series/$VERSION/+download/duplicity-$VERSION.tar.gz \
  && cd /opt/ \
