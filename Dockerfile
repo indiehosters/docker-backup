@@ -2,7 +2,7 @@ FROM debian:jessie
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV VERSION=0.7.06
+ENV VERSION=0.7.09
 
 RUN apt-get update \
  && apt-get install -y --force-yes apt-transport-https ca-certificates \
