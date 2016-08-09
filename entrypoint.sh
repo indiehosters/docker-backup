@@ -3,7 +3,6 @@
 while true
 do
   cd /domains
-  START=`date +%s`
   for domain in `ls . -I backups -I trash`
   do
     echo $domain
@@ -15,5 +14,5 @@ do
     duplicity remove-older-than 10D --force file:///backups/$domain
     duplicity --volsize 500 --full-if-older-than 7D --asynchronous-upload /domains/$domain file:///backups/$domain
   done
-  sleep $((3600 - `date +%s` + $START))
+  sleep 3600
 done
