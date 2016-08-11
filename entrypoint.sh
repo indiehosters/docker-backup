@@ -11,7 +11,6 @@ do
     then
       ./scripts/pre-backup
     fi
-    duplicity remove-older-than 10D --force file:///backups/$domain
     duplicity --volsize 500 --full-if-older-than 7D --asynchronous-upload /domains/$domain file:///backups/$domain
   done
   sleep 3600
