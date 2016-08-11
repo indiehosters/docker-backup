@@ -11,7 +11,7 @@ do
     then
       ./scripts/pre-backup
     fi
-    duplicity --volsize 500 --full-if-older-than 7D --asynchronous-upload /domains/$domain file:///backups/$domain
+    duplicity --volsize 500 --full-if-older-than ${FULL_FREQUENCY} --asynchronous-upload /domains/$domain ${PROTOCOL}://${BACKUP_DESTINATION}/$domain
   done
   sleep 3600
 done
